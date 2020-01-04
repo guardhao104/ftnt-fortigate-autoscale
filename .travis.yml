@@ -5,6 +5,8 @@ script:
   - npm run build
   - npm run unzip-aws-artifacts
   - git describe
+before_deploy:
+  - pip install --user awscli
 deploy:
   - provider: releases
     api_key:
