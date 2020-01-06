@@ -9,7 +9,7 @@ before_deploy:
   - pip install --user --upgrade awscli
 deploy:
   - provider: script
-    script: ~/.local/bin/aws s3 sync dist s3://fortinet-github-aws-release-artifacts/fortigate-autoscale/$TRAVIS_BRANCH --region=us-west-2 --delete
+    script: ~/.local/bin/aws s3 sync distAWS s3://fortinet-github-aws-release-artifacts/fortigate-autoscale/$TRAVIS_BRANCH --region=us-west-2 --delete
     skip_cleanup: true
     on:
       all_branches: true
